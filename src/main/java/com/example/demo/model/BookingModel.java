@@ -17,14 +17,14 @@ public class BookingModel {
 	private String paymentStatus;
 	private String bookingDate;
 	private String travelDate;
-	private int contactNumber;
+	private long contactNumber;
 	private int totalAmount;
 	public BookingModel() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 	public BookingModel(int bookingId, int flightId, String fromCity, String toCity, String customerName,
-			String paymentStatus, String bookingDate, String travelDate, int contactNumber, int totalAmount) {
+			String paymentStatus, String bookingDate, String travelDate, long contactNumber, int totalAmount) {
 		super();
 		this.bookingId = bookingId;
 		this.flightId = flightId;
@@ -85,10 +85,10 @@ public class BookingModel {
 	public void setTravelDate(String travelDate) {
 		this.travelDate = travelDate;
 	}
-	public int getContactNumber() {
+	public long getContactNumber() {
 		return contactNumber;
 	}
-	public void setContactNumber(int contactNumber) {
+	public void setContactNumber(long contactNumber) {
 		this.contactNumber = contactNumber;
 	}
 	public int getTotalAmount() {

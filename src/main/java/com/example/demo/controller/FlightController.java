@@ -39,10 +39,43 @@ public class FlightController {
 		return fs.showinfo();
 	}
 	
-	@GetMapping("show/{id}")
+	@GetMapping("/show/{id}")
 	public Optional<FlightModel> displayFlight(@PathVariable int id)
 	{
 		return fs.showid(id);
+	}
+	@GetMapping("sort/{name}")
+	public List<FlightModel> getSortInfo(@PathVariable String name)
+	{
+		return fs.getsortinfo(name);
+	}
+	
+	@GetMapping("getpage/{pgno}/{pgsize}")
+	public List<FlightModel> getByPage(@PathVariable int pgno,@PathVariable int pgsize)
+	{
+		return fs.getbypage(pgno, pgsize);
+	}
+	
+	@GetMapping("getpage/{pgno}/{pgsize}/{name}")
+	public List<FlightModel> getbySortPage(@PathVariable int pgno,@PathVariable int pgsize,@PathVariable String name )
+	{
+		return fs.getbysortpage(pgno, pgsize, name);
+	}
+	
+	@GetMapping("getqueryid/{id}")
+	public List<FlightModel> getqueryid(@PathVariable int id)
+	{
+		return fs.getdetails(id);
+	}
+	@GetMapping("getqueryefare/{id}")
+	public List<FlightModel> getqueryefare(@PathVariable int id)
+	{
+		return fs.getefaredetails(id);
+	}
+	@GetMapping("getquerycity/{n1}/{n2}")
+	public List<FlightModel> getquerycity(@PathVariable String n1,@PathVariable String n2)
+	{
+		return fs.getbyfromandto(n1, n2);
 	}
 	@DeleteMapping("deleteall")
 	public String removeFlights()
