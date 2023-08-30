@@ -263,3 +263,119 @@ spring.jpa.hibernate.ddl-auto=update
 		fs.deleteallinfo();;
 		return "ALl Flights are Successfully Deleted";
 	}
+
+
+
+
+
+
+
+
+[
+    {
+        "bookingId": 1,
+        "customerName": "Hariharan",
+        "paymentStatus": "Success",
+        "bookingDate": "2023-03-08",
+        "travelDate": "2023-05-08",
+        "contactNumber": 7339085005,
+        "bookingType": "Business",
+        "totalAmount": 35000,
+        "totalPassengers": 3,
+        "pmodel": [
+            {
+                "passengerId": 4026,
+                "passengerName": "Hari",
+                "age": 19,
+                "gender": "Male"
+            },
+            {
+                "passengerId": 4076,
+                "passengerName": "Pooja",
+                "age": 35,
+                "gender": "Female"
+            },
+            {
+                "passengerId": 6373,
+                "passengerName": "Dharshini",
+                "age": 19,
+                "gender": "Female"
+            }
+        ]
+    },
+    {
+        "bookingId": 2,
+        "customerName": "Haricharan",
+        "paymentStatus": "Success",
+        "bookingDate": "2023-03-08",
+        "travelDate": "2023-05-08",
+        "contactNumber": 6383402676,
+        "bookingType": "Economy",
+        "totalAmount": 5000,
+        "totalPassengers": 1,
+        "pmodel": [
+            {
+                "passengerId": 9873,
+                "passengerName": "Ravi",
+                "age": 29,
+                "gender": "Male"
+            }
+        ]
+    },
+    {
+        "bookingId": 3,
+        "customerName": "RamKumar",
+        "paymentStatus": "Failure",
+        "bookingDate": "2023-03-08",
+        "travelDate": "2023-05-08",
+        "contactNumber": 9488745289,
+        "bookingType": "Business",
+        "totalAmount": 30000,
+        "totalPassengers": 3,
+        "pmodel": [
+            {
+                "passengerId": 6843,
+                "passengerName": "Dharshini",
+                "age": 19,
+                "gender": "Female"
+            },
+            {
+                "passengerId": 7657,
+                "passengerName": "Harish",
+                "age": 54,
+                "gender": "Male"
+            },
+            {
+                "passengerId": 8979,
+                "passengerName": "Churchill",
+                "age": 24,
+                "gender": "Male"
+            }
+        ]
+    },
+    {
+        "bookingId": 4,
+        "customerName": "Siva",
+        "paymentStatus": "Pending",
+        "bookingDate": "2023-03-08",
+        "travelDate": "2023-05-08",
+        "contactNumber": 7277210066,
+        "bookingType": "Economy",
+        "totalAmount": 5000,
+        "totalPassengers": 2,
+        "pmodel": [
+            {
+                "passengerId": 1212,
+                "passengerName": "Ana de Armas",
+                "age": 29,
+                "gender": "Female"
+            },
+            {
+                "passengerId": 3289,
+                "passengerName": "Gosling",
+                "age": 20,
+                "gender": "Male"
+            }
+        ]
+    }
+]

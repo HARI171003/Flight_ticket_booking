@@ -1,7 +1,14 @@
 package com.example.demo.model;
 
+import java.util.List;
+
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -10,56 +17,47 @@ public class BookingModel {
 
 	@Id
 	private int bookingId;
-	private int flightId;
-	private String fromCity;
-	private String toCity;
+	
 	private String customerName;
 	private String paymentStatus;
 	private String bookingDate;
 	private String travelDate;
 	private long contactNumber;
+	private String bookingType;
 	private int totalAmount;
+	private int totalPassengers;
+	
+//	@ManyToOne
+//	@JoinColumn(name="fk_flightId")
+//	private FlightModel fmodel;
+	@OneToMany(cascade = CascadeType.ALL)
+	@JoinColumn(name="fk_passengerId")
+	private List<PassengerModel> pmodel;
 	public BookingModel() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public BookingModel(int bookingId, int flightId, String fromCity, String toCity, String customerName,
-			String paymentStatus, String bookingDate, String travelDate, long contactNumber, int totalAmount) {
+	public BookingModel(int bookingId, String customerName, String paymentStatus, String bookingDate, String travelDate,
+			long contactNumber, String bookingType, int totalAmount, int totalPassengers,
+			List<PassengerModel> pmodel) {
 		super();
 		this.bookingId = bookingId;
-		this.flightId = flightId;
-		this.fromCity = fromCity;
-		this.toCity = toCity;
 		this.customerName = customerName;
 		this.paymentStatus = paymentStatus;
 		this.bookingDate = bookingDate;
 		this.travelDate = travelDate;
 		this.contactNumber = contactNumber;
+		this.bookingType = bookingType;
 		this.totalAmount = totalAmount;
+		this.totalPassengers = totalPassengers;
+//		this.fmodel = fmodel;
+		this.pmodel = pmodel;
 	}
 	public int getBookingId() {
 		return bookingId;
 	}
 	public void setBookingId(int bookingId) {
 		this.bookingId = bookingId;
-	}
-	public int getFlightId() {
-		return flightId;
-	}
-	public void setFlightId(int flightId) {
-		this.flightId = flightId;
-	}
-	public String getFromCity() {
-		return fromCity;
-	}
-	public void setFromCity(String fromCity) {
-		this.fromCity = fromCity;
-	}
-	public String getToCity() {
-		return toCity;
-	}
-	public void setToCity(String toCity) {
-		this.toCity = toCity;
 	}
 	public String getCustomerName() {
 		return customerName;
@@ -91,12 +89,37 @@ public class BookingModel {
 	public void setContactNumber(long contactNumber) {
 		this.contactNumber = contactNumber;
 	}
+	public String getBookingType() {
+		return bookingType;
+	}
+	public void setBookingType(String bookingType) {
+		this.bookingType = bookingType;
+	}
 	public int getTotalAmount() {
 		return totalAmount;
 	}
 	public void setTotalAmount(int totalAmount) {
 		this.totalAmount = totalAmount;
 	}
+	public int getTotalPassengers() {
+		return totalPassengers;
+	}
+	public void setTotalPassengers(int totalPassengers) {
+		this.totalPassengers = totalPassengers;
+	}
+//	public FlightModel getFmodel() {
+//		return fmodel;
+//	}
+//	public void setFmodel(FlightModel fmodel) {
+//		this.fmodel = fmodel;
+//	}
+	public List<PassengerModel> getPmodel() {
+		return pmodel;
+	}
+	public void setPmodel(List<PassengerModel> pmodel) {
+		this.pmodel = pmodel;
+	}
+	
 	
 	
 }
