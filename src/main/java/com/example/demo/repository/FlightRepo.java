@@ -18,4 +18,7 @@ public interface FlightRepo extends JpaRepository<FlightModel, Integer> {
 	
 	@Query(value="Select * from flight_details where from_city=:s and to_city=:x",nativeQuery = true)
 	public List<FlightModel> getqecity (@Param("s") String n1,@Param("x") String n2);
+	
+	@Query(value="select * from flight_details where flight_id=:s",nativeQuery = true)
+	public FlightModel getdetails(@Param("s") int id);
 }

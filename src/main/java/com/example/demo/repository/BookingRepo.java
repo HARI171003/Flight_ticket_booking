@@ -17,4 +17,6 @@ public interface BookingRepo extends JpaRepository<BookingModel, Integer>{
 	@Query(value="select * from booking_details where booking_type=:s",nativeQuery = true)
 	public List<BookingModel> displaybytype(@Param("s") String name);
 	
+	@Query(value="select flight_id from booking_details b where b.booking_id=:s",nativeQuery = true)
+	public int getFlightid(@Param("s") int id);
 }

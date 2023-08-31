@@ -17,7 +17,7 @@ public class BookingModel {
 
 	@Id
 	private int bookingId;
-	
+	private int flightId;
 	private String customerName;
 	private String paymentStatus;
 	private String bookingDate;
@@ -27,21 +27,25 @@ public class BookingModel {
 	private int totalAmount;
 	private int totalPassengers;
 	
+	
 //	@ManyToOne
 //	@JoinColumn(name="fk_flightId")
 //	private FlightModel fmodel;
 	@OneToMany(cascade = CascadeType.ALL)
 	@JoinColumn(name="fk_passengerId")
 	private List<PassengerModel> pmodel;
+	
 	public BookingModel() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public BookingModel(int bookingId, String customerName, String paymentStatus, String bookingDate, String travelDate,
-			long contactNumber, String bookingType, int totalAmount, int totalPassengers,
+
+	public BookingModel(int bookingId, int flightId, String customerName, String paymentStatus, String bookingDate,
+			String travelDate, long contactNumber, String bookingType, int totalAmount, int totalPassengers,
 			List<PassengerModel> pmodel) {
 		super();
 		this.bookingId = bookingId;
+		this.flightId = flightId;
 		this.customerName = customerName;
 		this.paymentStatus = paymentStatus;
 		this.bookingDate = bookingDate;
@@ -50,72 +54,93 @@ public class BookingModel {
 		this.bookingType = bookingType;
 		this.totalAmount = totalAmount;
 		this.totalPassengers = totalPassengers;
-//		this.fmodel = fmodel;
 		this.pmodel = pmodel;
 	}
+
 	public int getBookingId() {
 		return bookingId;
 	}
+
 	public void setBookingId(int bookingId) {
 		this.bookingId = bookingId;
 	}
+
+	public int getFlightId() {
+		return flightId;
+	}
+
+	public void setFlightId(int flightId) {
+		this.flightId = flightId;
+	}
+
 	public String getCustomerName() {
 		return customerName;
 	}
+
 	public void setCustomerName(String customerName) {
 		this.customerName = customerName;
 	}
+
 	public String getPaymentStatus() {
 		return paymentStatus;
 	}
+
 	public void setPaymentStatus(String paymentStatus) {
 		this.paymentStatus = paymentStatus;
 	}
+
 	public String getBookingDate() {
 		return bookingDate;
 	}
+
 	public void setBookingDate(String bookingDate) {
 		this.bookingDate = bookingDate;
 	}
+
 	public String getTravelDate() {
 		return travelDate;
 	}
+
 	public void setTravelDate(String travelDate) {
 		this.travelDate = travelDate;
 	}
+
 	public long getContactNumber() {
 		return contactNumber;
 	}
+
 	public void setContactNumber(long contactNumber) {
 		this.contactNumber = contactNumber;
 	}
+
 	public String getBookingType() {
 		return bookingType;
 	}
+
 	public void setBookingType(String bookingType) {
 		this.bookingType = bookingType;
 	}
+
 	public int getTotalAmount() {
 		return totalAmount;
 	}
+
 	public void setTotalAmount(int totalAmount) {
 		this.totalAmount = totalAmount;
 	}
+
 	public int getTotalPassengers() {
 		return totalPassengers;
 	}
+
 	public void setTotalPassengers(int totalPassengers) {
 		this.totalPassengers = totalPassengers;
 	}
-//	public FlightModel getFmodel() {
-//		return fmodel;
-//	}
-//	public void setFmodel(FlightModel fmodel) {
-//		this.fmodel = fmodel;
-//	}
+
 	public List<PassengerModel> getPmodel() {
 		return pmodel;
 	}
+
 	public void setPmodel(List<PassengerModel> pmodel) {
 		this.pmodel = pmodel;
 	}
